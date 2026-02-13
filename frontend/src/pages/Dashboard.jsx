@@ -22,8 +22,7 @@ export default function Dashboard() {
   const fetchStats = useCallback(async () => {
     setLoading(true)
     try {
-      // Mocking data for visual testing if API fails
-      // Replace with actual API calls in production
+      
       const results = await Promise.allSettled([
         getStudents(),
         getTests(),

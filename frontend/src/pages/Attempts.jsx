@@ -196,7 +196,7 @@ export default function Attempts() {
                       <td className="px-6 py-4 text-right">
                         <button
                           onClick={(e) => {
-                            e.stopPropagation() // 🔥 prevents row click double trigger
+                            e.stopPropagation() 
                             navigate(`/attempts/${a.attempt_id}`)
                           }}
                           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-zinc-400 hover:text-white hover:bg-zinc-800 text-xs"

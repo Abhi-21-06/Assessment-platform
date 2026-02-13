@@ -13,7 +13,7 @@ export default function Leaderboard() {
     getTests().then((res) => setTests(res.data)).catch(console.error)
   }, [])
 
-  // 2. Load Leaderboard (Direct String ID logic)
+  // 2. Load Leaderboard 
   useEffect(() => {
     if (!selectedTest) {
       setLeaders([])

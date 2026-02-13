@@ -21,7 +21,7 @@ export default function AttemptDetail() {
   
   const [attempt, setAttempt] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [processing, setProcessing] = useState(false) // For button loading states
+  const [processing, setProcessing] = useState(false) 
   const [flagReason, setFlagReason] = useState("")
 
   useEffect(() => {

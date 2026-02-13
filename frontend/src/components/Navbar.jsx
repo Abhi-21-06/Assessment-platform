@@ -12,7 +12,7 @@ export default function Navbar() {
     <div className="sticky top-4 z-50 flex justify-center w-full px-4 mb-4">
       <nav className="flex items-center gap-1 p-1.5 rounded-full border border-zinc-800 bg-zinc-950/80 backdrop-blur-xl shadow-2xl ring-1 ring-white/5">
         
-        {/* 1. Minimal Logo (Integrated) */}
+        
         <Link 
           to="/" 
           className="flex items-center gap-2 pl-3 pr-2 py-1.5 mr-1 text-sm font-bold text-white hover:text-zinc-300 transition-colors"
@@ -21,10 +21,10 @@ export default function Navbar() {
           <span className="tracking-tight">ASSESSMENT</span>
         </Link>
 
-        {/* Vertical Divider */}
+        
         <div className="w-px h-4 bg-zinc-800 mx-1" />
 
-        {/* 2. Centered Navigation Links */}
+        
         <NavItem to="/" icon={LayoutDashboard}>
           Dashboard
         </NavItem>
@@ -46,7 +46,7 @@ export default function Navbar() {
   )
 }
 
-// --- Reusable Pill Link ---
+
 function NavItem({ to, children, icon: Icon }) {
   return (
     <NavLink
