@@ -49,17 +49,17 @@ def find_duplicate_attempt(new_attempt, existing_attempts):
 
     for attempt in existing_attempts:
 
-        # 1. Check time window
+       
         if not is_within_time_window(new_attempt.started_at, attempt.started_at):
             continue
 
-        # 2. Check answer similarity
+        
         similarity = calculate_similarity(
             new_attempt.answers,
             attempt.answers
         )
 
         if similarity >= SIMILARITY_THRESHOLD:
-            return attempt  # Found duplicate
+            return attempt  
 
     return None

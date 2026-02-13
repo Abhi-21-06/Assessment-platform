@@ -7,15 +7,15 @@ def normalize_email(email: str | None) -> str | None:
 
     email = email.strip().lower()
 
-    # Gmail alias handling
+   
     if "@gmail.com" in email:
         local, domain = email.split("@")
 
-        # Remove anything after +
+        
         if "+" in local:
             local = local.split("+")[0]
 
-        # Remove dots in gmail local part
+        
         local = local.replace(".", "")
 
         return f"{local}@{domain}"
@@ -27,7 +27,7 @@ def normalize_phone(phone: str | None) -> str | None:
     if not phone:
         return None
 
-    # Keep only digits
+  
     digits = re.sub(r"\D", "", phone)
 
     return digits if digits else None

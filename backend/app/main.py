@@ -12,23 +12,23 @@ from .scoring import compute_score
 from .identity import get_student_identity
 from .dedup import find_duplicate_attempt
 from .logging_config import get_logger
-# 
+
 from fastapi.middleware.cors import CORSMiddleware
 
 
-# ... existing imports ...
+
 
 app = FastAPI()
 
-# define origins
+
 origins = [
-    "http://localhost:5173",                       # Keep this for local development
-    "https://assessment-platform-frontend-rgvs.onrender.com",      # <--- PASTE YOUR RENDER FRONTEND URL HERE
+    "http://localhost:5173",                       
+    "https://assessment-platform-frontend-rgvs.onrender.com",    
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,   # Use the list we defined above
+    allow_origins=origins,  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -233,7 +233,7 @@ def list_attempts(
     db = SessionLocal()
 
     try:
-        # Create base query FIRST
+        
         query = (
             db.query(models.Attempt, models.Student, models.Test)
             .join(models.Student, models.Attempt.student_id == models.Student.id)
