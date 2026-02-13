@@ -16,17 +16,23 @@ from .logging_config import get_logger
 from fastapi.middleware.cors import CORSMiddleware
 
 
+# ... existing imports ...
+
 app = FastAPI()
+
+# define origins
+origins = [
+    "http://localhost:5173",                       # Keep this for local development
+    "https://assessment-platform-frontend-rgvs.onrender.com",      # <--- PASTE YOUR RENDER FRONTEND URL HERE
+]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=origins,   # Use the list we defined above
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-# 
-
 
 http_logger = get_logger("http")
 scoring_logger = get_logger("scoring")
